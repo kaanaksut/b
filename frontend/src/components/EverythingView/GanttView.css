@@ -1,0 +1,36 @@
+.gantt-container {
+    padding: 20px;
+    background-color: #f7f9fc;
+  }
+  
+  .gantt-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .gantt-bar {
+    background-color: #c6e7ff;
+    padding: 10px 15px;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .gantt-bar:hover {
+    background-color: #b0d4f1;
+  }
+  
+  .gantt-bar h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .gantt-bar p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+  }
+  

@@ -1,0 +1,49 @@
+/* src/components/BoardView.css */
+.board-view-container {
+  padding: 20px;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+}
+
+.board-columns {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.board-column {
+  background-color: #f0f0f0;
+  padding: 15px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.board-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.board-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.board-card h4 {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+}
+
+.board-card p {
+  font-size: 14px;
+  color: #555;
+}
