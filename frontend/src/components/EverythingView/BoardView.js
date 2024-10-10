@@ -1,17 +1,22 @@
 // src/components/BoardView.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../utils/axiosConfig"; // axiosConfig.js'i buradan import ediyoruz
 
 const BoardView = () => {
   const [tasks, setTasks] = useState([]);
 
   // Veritabanından görevleri çek
+  // useEffect ile listeleri API'den çekiyoruz
   useEffect(() => {
-    const fetchTasks = async () => {
-      const { data } = await axios.get('/api/tasks');
-      setTasks(data);
+    const fetchLists = async () => {
+      try {
+        const { data } = await axiosInstance.get("/lists"); // JWT olmadan istek
+        setTasks(data);
+      } catch (error) {
+        console.error("Error fetching lists", error);
+      }
     };
-    fetchTasks();
+    fetchLists();
   }, []);
 
   return (
@@ -20,10 +25,8 @@ const BoardView = () => {
       <div className="board">
         {tasks.map((task) => (
           <div key={task._id} className="board-card">
-            <h3>{task.title}</h3>
-            <p>{task.description}</p>
-            <p>Status: {task.status}</p>
-            <p>Due: {task.dueDate}</p>
+            <h3>{task.name}</h3>
+            <p>{task.describtion}</p>
           </div>
         ))}
       </div>
